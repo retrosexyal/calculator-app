@@ -1,18 +1,19 @@
+import { AddCommand, SubtractCommand, DivideCommand, MultiplyCommand, RODCommand } from '@utils/calculatorCommands';
 export const handleHistory = (history) => {
   return history.map((command) => {
-    if (command.constructor.name === 'AddCommand') {
+    if (command instanceof AddCommand) {
       return `${command.firstValue}+${command.secondValue}`;
     }
-    if (command.constructor.name === 'SubtractCommand') {
+    if (command instanceof SubtractCommand) {
       return `${command.firstValue}-${command.secondValue}`;
     }
-    if (command.constructor.name === 'DivideCommand') {
+    if (command instanceof DivideCommand) {
       return `${command.firstValue}/${command.secondValue}`;
     }
-    if (command.constructor.name === 'MultiplyCommand') {
+    if (command instanceof MultiplyCommand) {
       return `${command.firstValue}*${command.secondValue}`;
     }
-    if (command.constructor.name === 'RODCommand') {
+    if (command instanceof RODCommand) {
       return `${command.firstValue}%${command.secondValue}`;
     }
   });

@@ -35,8 +35,6 @@ export function KeypadFC() {
     if (key === '=') {
       calculate(value, calculator);
       const history = JSON.stringify(handleHistory(calculator.getHistory()));
-      console.log(history);
-      console.log(calculator.getHistory());
       dispatch(historyAction(JSON.parse(history)));
       localStorage.setItem('history', history);
       dispatch(inputValueAction(calculator.getResult()));
